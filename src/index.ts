@@ -1,13 +1,12 @@
 import 'reflect-metadata';
 import './database';
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 const port = 3333;
 
-app.get("/basic", (request, response) => {
-  return response.json({message: "Basic route created!"});
-});
+app.use(routes);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}!`);
