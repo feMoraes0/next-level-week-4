@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "ts-node-dev src/index --transpile-only --ignore-watch node_modules",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
-    "test": "jest"
+    "test": "NODE_ENV=test jest"
   },
   "repository": {
     "type": "git",

@@ -6,7 +6,7 @@ export default class UserController {
   public async create(request: Request, response: Response): Promise<Response> {
     const { name, email } = request.body;
 
-    const userAlreadyExists = User.findOne({ email });
+    const userAlreadyExists = await User.findOne({ email });
 
     if(userAlreadyExists) {
       return response.status(400).json({
