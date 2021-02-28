@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import User from '../models/User';
 
-export class UserController {
+export default class UserController {
 
   public async create(request: Request, response: Response): Promise<Response> {
     const { name, email } = request.body;
@@ -18,7 +18,7 @@ export class UserController {
 
     const saved = await user.save();
 
-    return response.json(saved);
+    return response.status(201).json(saved);
   }
 
 }
