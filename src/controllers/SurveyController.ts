@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
 import Survey from "../models/Survey";
 
-
-
 export default class SurveyController {
 
   async index(request: Request, response: Response): Promise<Response> {
